@@ -1,8 +1,6 @@
 def setup():
     global krotkaKolorow
-    krotkaKolorow = ((234,21,182),(201,227,101),(118,32,32), (0, 0, 0))
-    global c
-    c =('FFFFFFFF')
+    krotkaKolorow = ((234,21,182),(201,227,101),(118,32,32))
     background(89,147,139);
     size (400, 400)
     textSize (120)
@@ -20,6 +18,7 @@ def draw():
         text("m", width/2+120, height/2)
     else:
         fill(255)
+    # tu trzeba jeeszcze sprawdzać, która litera została zaznaczona myszą
     if mousePressed:
         fill(*krotkaKolorow[2])
         text('d',width/2-120, height/2)
@@ -30,10 +29,7 @@ def draw():
     if keyCode==LEFT:
          fill(*krotkaKolorow[0])
          text('d',width/2-120, height/2)
-    if hex(get(mouseX,mouseY)) == c:
-     fill(*krotkaKolorow[3])
-     text('d',width/2-120, height/2)
-
+    
     s = createShape()
     s.beginShape()
     s.fill(255, 184, 126)
